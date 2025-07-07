@@ -23,9 +23,11 @@ This project implements **advanced NPU optimization for Kokoro TTS** with specif
 
 ### Prerequisites
 
-- AMD Ryzen AI NPU Phoenix hardware
-- Ubuntu 25.04+ (Linux kernel 6.14+)
+- AMD Ryzen 9 8945HS with NPU Phoenix (AIE-ML)
+- AMD Radeon Graphics (RADV PHOENIX) gfx1103 iGPU
+- Ubuntu 25.04 with KDE Plasma (Linux kernel 6.14.0-23-generic)
 - NPU development environment (see [NPU-Development](../NPU-Development/))
+- NucBox K11 system with 96GB RAM (16GB allocated to VRAM)
 
 ### Installation
 
@@ -257,15 +259,19 @@ result = kernel.accelerated_inference(inference_function, inputs)
 ## NPU Hardware Requirements
 
 ### Supported Hardware
-- ✅ **AMD Ryzen AI Phoenix** (Verified working - Primary target)
+- ✅ **AMD Ryzen 9 8945HS** with NPU Phoenix (AIE-ML) - Primary target
+- ✅ **AMD Radeon Graphics (RADV PHOENIX)** gfx1103 iGPU (UI acceleration)
+- ✅ **NucBox K11** system (96GB RAM, 16GB VRAM allocation)
+- ✅ **AMD Ryzen AI Phoenix** (Compatible)
 - ✅ **AMD Ryzen AI Hawk Point** (Compatible)
 - ✅ **AMD Ryzen AI Strix** (Compatible)
 
 ### Software Requirements
-- **OS**: Ubuntu 25.04+ (native NPU driver support)
-- **Kernel**: Linux 6.14+ (6.10+ minimum)
+- **OS**: Ubuntu 25.04 with KDE Plasma (Linux kernel 6.14.0-23-generic)
 - **NPU Firmware**: v1.5.5.391 (verified working)
 - **XRT Runtime**: v2.20.0 (configured and operational)
+- **AMDXDNA Driver**: v2.20.0_20250623
+- **Desktop Environment**: KDE Plasma
 
 ### NPU Status Verification
 
@@ -278,7 +284,7 @@ lsmod | grep amdxdna
 xrt-smi examine
 
 # Expected output:
-# NPU Phoenix detected
+# NPU Phoenix detected (AIE-ML)
 # Firmware v1.5.5.391
 # Status: Operational
 ```
