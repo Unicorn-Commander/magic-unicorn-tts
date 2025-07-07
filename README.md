@@ -47,6 +47,9 @@ curl -fsSL https://raw.githubusercontent.com/Unicorn-Commander/magic-unicorn-tts
 git clone https://github.com/Unicorn-Commander/magic-unicorn-tts.git
 cd magic-unicorn-tts
 ./setup.sh
+
+# Enable NPU turbo mode for maximum performance
+sudo /opt/xilinx/xrt/bin/xrt-smi configure --device 0000:c7:00.1 --pmode turbo
 ```
 
 ## 📊 Performance Benchmarks
@@ -64,7 +67,7 @@ Tested on AMD Ryzen 9 8945HS with NPU Phoenix (AIE-ML):
 *RTF = Real-Time Factor (lower is faster)*
 
 ### Hardware Utilization
-- **NPU**: Phoenix (AIE-ML) utilized at ~60% capacity  
+- **NPU**: Phoenix (AIE-ML) in **turbo mode** - utilized at ~60% capacity  
 - **iGPU**: AMD Radeon Graphics (RADV PHOENIX) gfx1103 for UI acceleration
 - **Memory**: 8GB model + 2GB processing overhead (96GB system RAM, 16GB VRAM)
 - **Power**: ~15W total system draw during synthesis
@@ -211,6 +214,9 @@ ls -la /dev/accel/
 ```bash
 # Activate NPU development environment
 source ~/npu-dev/setup_npu_env.sh
+
+# Enable NPU turbo mode for maximum performance
+sudo /opt/xilinx/xrt/bin/xrt-smi configure --device 0000:c7:00.1 --pmode turbo
 
 # Verify NPU Phoenix status
 xrt-smi examine
