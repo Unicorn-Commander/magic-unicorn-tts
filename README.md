@@ -56,13 +56,13 @@ sudo /opt/xilinx/xrt/bin/xrt-smi configure --device 0000:c7:00.1 --pmode turbo
 
 ### NPU vs CPU Performance
 
-Tested on AMD Ryzen 9 8945HS with NPU Phoenix (AIE-ML):
+Tested on AMD Ryzen 9 8945HS with NPU Phoenix (AIE-ML) in **TURBO MODE**:
 
 | Method | Generation Time | Audio Length | RTF | Speedup |
 |--------|-----------------|--------------|-----|---------|
-| CPU Baseline | 1.88s | 6.5s | 0.290 | 1.0x |
-| **NPU Phoenix INT8** | **1.69s** | 6.5s | **0.260** | **1.35x** |
-| NPU Phoenix FP16 | 1.82s | 6.5s | 0.280 | 1.25x |
+| CPU Baseline | 1.395s | 7.34s | 0.190 | 1.0x |
+| **NPU Phoenix Basic** | **1.262s** | 8.22s | **0.153** | **1.11x** |
+| NPU Phoenix MLIR-AIE | 1.532s | 8.22s | 0.186 | 0.91x |
 
 *RTF = Real-Time Factor (lower is faster)*
 
@@ -84,8 +84,8 @@ Tested on AMD Ryzen 9 8945HS with NPU Phoenix (AIE-ML):
 
 | Model | Precision | Size | NPU Performance | Use Case |
 |-------|-----------|------|----------------|----------|
-| `kokoro-npu-quantized-int8.onnx` | INT8 | 128 MB | RTF 0.26 | Maximum speed |
-| `kokoro-npu-fp16.onnx` | FP16 | 178 MB | RTF 0.28 | Balanced quality/speed |
+| `kokoro-v1.0.onnx` | FP32 | 325 MB | RTF 0.153 | Production ready |
+| `kokoro-npu-optimized.onnx` | Optimized | 340 MB | RTF 0.186 | MLIR-AIE enhanced |
 
 ## 🌐 Web Interface
 
@@ -193,7 +193,7 @@ print(f"🚀 NPU Phoenix Performance Metrics:")
 print(f"   Generation time: {generation_time:.3f}s")
 print(f"   Audio length: {audio_length:.2f}s") 
 print(f"   Real-time factor: {rtf:.3f}")
-print(f"   NPU speedup: 1.35x over CPU")
+print(f"   NPU speedup: 1.11x over CPU (Turbo Mode)")
 ```
 
 ## 🐛 Troubleshooting
