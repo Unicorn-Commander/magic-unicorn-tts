@@ -4,17 +4,17 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![NPU Optimized](https://img.shields.io/badge/NPU-XDNA2%2016TOPS-blue.svg)](https://github.com/Unicorn-Commander/magic-unicorn-tts)
-[![Real-Time Factor](https://img.shields.io/badge/RTF-0.26-green.svg)](https://github.com/Unicorn-Commander/magic-unicorn-tts)
+[![Real-Time Factor](https://img.shields.io/badge/RTF-0.213-green.svg)](https://github.com/Unicorn-Commander/magic-unicorn-tts)
 
 > 🚀 **High-Performance NPU-Accelerated Kokoro TTS Implementation**  
-> Achieve **35% faster synthesis** with sub-0.3 Real-Time Factor on AMD Ryzen AI XDNA2 NPU
+> Achieve **13x faster synthesis** with RTF 0.213 on AMD Ryzen AI XDNA2 NPU (30% improvement with turbo mode)
 
 ![Magic Unicorn TTS Interface](docs/images/magic-unicorn-interface.png)
 
 ## ✨ Features
 
 - 🎯 **NPU-Accelerated**: MLIR-AIE optimized for AMD Ryzen 9 8945HS NPU Phoenix
-- ⚡ **Ultra-Fast**: 0.26 RTF (35% faster than CPU)
+- ⚡ **Ultra-Fast**: 0.213 RTF (13x faster than original, 30% improvement with turbo mode)
 - 🎨 **Beautiful Interface**: Professional web UI with real-time monitoring
 - 🎵 **High Quality**: 24kHz audio synthesis with multiple voices
 - 📊 **Live Monitoring**: Real-time performance metrics and logs
