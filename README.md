@@ -2,7 +2,7 @@
 
 **High-Performance NPU-Accelerated Kokoro TTS for AMD Ryzen AI**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-yellow.svg)](LICENSE)
 [![NPU Optimized](https://img.shields.io/badge/NPU-XDNA2%2016TOPS-blue.svg)](https://github.com/Unicorn-Commander/magic-unicorn-tts)
 [![Real-Time Factor](https://img.shields.io/badge/RTF-0.213-green.svg)](https://github.com/Unicorn-Commander/magic-unicorn-tts)
 
@@ -227,7 +227,7 @@ watch -n 1 'xrt-smi examine | grep -A 5 NPU'
 
 ## 📄 License
 
-MIT License - see LICENSE file for details
+Magic Unicorn TTS is licensed under the [Apache License 2.0](LICENSE). The licence covers the code; the Magic Unicorn and Unicorn Commander names and logos are trademarks (see [TRADEMARKS.md](TRADEMARKS.md)).
 
 ## 🙏 Acknowledgments
 
